@@ -1,0 +1,6 @@
+alias go='cd ~/myk8s'
+alias perm='chmod u+x *'
+alias st='cd ~/myk8s; git status'
+alias add='cd ~/myk8s; git add *'
+alias psh='cd ~/myk8s; git push origin main'
+alias pll='cd ~/myk8s; git pull origin main'
