@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod    
+metadata:
+  name: mytest   
+  labels:
+    name: mytest-web        
+spec:
+  containers:
+  -
+    name: mytest-web 
+    image: mhausenblas/simpleservice:0.5.0 # This is the download name 
+    ports:
+     -
+       name: web      # port name
+       containerPort: 9876     # access on this port (int)
+       protocol: TCP           # TCP or UDP
