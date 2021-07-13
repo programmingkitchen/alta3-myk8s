@@ -1,0 +1,196 @@
+Name:         myfirstpod
+Namespace:    default
+Priority:     0
+Node:         node-2/10.5.145.99
+Start Time:   Sat, 10 Jul 2021 18:05:50 +0000
+Labels:       <none>
+Annotations:  Status:  Running
+IP:           192.168.247.1
+IPs:
+  IP:  192.168.247.1
+Containers:
+  webster:
+    Container ID:   containerd://c78d6507551b649864a01f83fad9df86721fe29c7f3abbd0e9c846b83c67fc97
+    Image:          bchd.registry/alta3-webby
+    Image ID:       bchd.registry/alta3-webby@sha256:5344aa4335c6dc1018fd171688f503f9c79808837a78329ce6c6a86414a5ec5f
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Sun, 11 Jul 2021 00:50:11 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-nx9lw (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-nx9lw:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-nx9lw
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:          <none>
+
+
+Name:         webweb-859f66846f-hbqrj
+Namespace:    default
+Priority:     0
+Node:         node-1/10.1.233.225
+Start Time:   Tue, 13 Jul 2021 01:17:39 +0000
+Labels:       app=webweb
+              pod-template-hash=859f66846f
+Annotations:  <none>
+Status:       Running
+IP:           192.168.84.130
+IPs:
+  IP:           192.168.84.130
+Controlled By:  ReplicaSet/webweb-859f66846f
+Containers:
+  webweb:
+    Container ID:   containerd://3786ac4f984afa841b2d66ffbef77971a907666519fab8c334ff9e33bb93891c
+    Image:          bchd.registry/granier-webby
+    Image ID:       bchd.registry/granier-webby@sha256:ad050e6bb656253678df90943c8b0937e95b6c98fe3b78a62a1c452b82a15393
+    Port:           8888/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 13 Jul 2021 01:17:45 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-nx9lw (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-nx9lw:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-nx9lw
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  18m   default-scheduler  Successfully assigned default/webweb-859f66846f-hbqrj to node-1
+  Normal  Pulling    18m   kubelet, node-1    Pulling image "bchd.registry/granier-webby"
+  Normal  Pulled     18m   kubelet, node-1    Successfully pulled image "bchd.registry/granier-webby"
+  Normal  Created    18m   kubelet, node-1    Created container webweb
+  Normal  Started    18m   kubelet, node-1    Started container webweb
+
+
+Name:         webweb-859f66846f-hxmws
+Namespace:    default
+Priority:     0
+Node:         node-3/10.5.9.59
+Start Time:   Tue, 13 Jul 2021 01:17:39 +0000
+Labels:       app=webweb
+              pod-template-hash=859f66846f
+Annotations:  <none>
+Status:       Running
+IP:           192.168.139.67
+IPs:
+  IP:           192.168.139.67
+Controlled By:  ReplicaSet/webweb-859f66846f
+Containers:
+  webweb:
+    Container ID:   containerd://7312c415a44f0c04384923659be0172179606f39314c18f6760f5056fa814283
+    Image:          bchd.registry/granier-webby
+    Image ID:       bchd.registry/granier-webby@sha256:ad050e6bb656253678df90943c8b0937e95b6c98fe3b78a62a1c452b82a15393
+    Port:           8888/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 13 Jul 2021 01:17:41 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-nx9lw (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-nx9lw:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-nx9lw
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  18m   default-scheduler  Successfully assigned default/webweb-859f66846f-hxmws to node-3
+  Normal  Pulling    18m   kubelet, node-3    Pulling image "bchd.registry/granier-webby"
+  Normal  Pulled     18m   kubelet, node-3    Successfully pulled image "bchd.registry/granier-webby"
+  Normal  Created    18m   kubelet, node-3    Created container webweb
+  Normal  Started    18m   kubelet, node-3    Started container webweb
+
+
+Name:         webweb-859f66846f-z9gj4
+Namespace:    default
+Priority:     0
+Node:         node-2/10.5.145.99
+Start Time:   Tue, 13 Jul 2021 01:17:39 +0000
+Labels:       app=webweb
+              pod-template-hash=859f66846f
+Annotations:  <none>
+Status:       Running
+IP:           192.168.247.2
+IPs:
+  IP:           192.168.247.2
+Controlled By:  ReplicaSet/webweb-859f66846f
+Containers:
+  webweb:
+    Container ID:   containerd://a982f1b1aea6095363d226c03ffa817226ebc4037fd86a797a8a5cc7dc77c8e2
+    Image:          bchd.registry/granier-webby
+    Image ID:       bchd.registry/granier-webby@sha256:ad050e6bb656253678df90943c8b0937e95b6c98fe3b78a62a1c452b82a15393
+    Port:           8888/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 13 Jul 2021 01:17:45 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-nx9lw (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-nx9lw:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-nx9lw
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  18m   default-scheduler  Successfully assigned default/webweb-859f66846f-z9gj4 to node-2
+  Normal  Pulling    18m   kubelet, node-2    Pulling image "bchd.registry/granier-webby"
+  Normal  Pulled     18m   kubelet, node-2    Successfully pulled image "bchd.registry/granier-webby"
+  Normal  Created    18m   kubelet, node-2    Created container webweb
+  Normal  Started    18m   kubelet, node-2    Started container webweb

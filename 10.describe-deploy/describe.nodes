@@ -1,0 +1,200 @@
+Name:               node-1
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=node-1
+                    kubernetes.io/os=linux
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Sat, 10 Jul 2021 15:02:05 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  node-1
+  AcquireTime:     <unset>
+  RenewTime:       Tue, 13 Jul 2021 01:36:15 +0000
+Conditions:
+  Type                 Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                 ------  -----------------                 ------------------                ------                       -------
+  NetworkUnavailable   False   Sat, 10 Jul 2021 15:02:30 +0000   Sat, 10 Jul 2021 15:02:30 +0000   CalicoIsUp                   Calico is running on this node
+  MemoryPressure       False   Tue, 13 Jul 2021 01:33:06 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure         False   Tue, 13 Jul 2021 01:33:06 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure          False   Tue, 13 Jul 2021 01:33:06 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                True    Tue, 13 Jul 2021 01:33:06 +0000   Sun, 11 Jul 2021 00:50:03 +0000   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  10.1.233.225
+  Hostname:    node-1
+Capacity:
+  cpu:                1
+  ephemeral-storage:  20145724Ki
+  hugepages-2Mi:      0
+  memory:             1008672Ki
+  pods:               110
+Allocatable:
+  cpu:                1
+  ephemeral-storage:  18566299208
+  hugepages-2Mi:      0
+  memory:             906272Ki
+  pods:               110
+System Info:
+  Machine ID:                 3e9ada359c6f4ffcac6950c3c7260105
+  System UUID:                3e9ada359c6f4ffcac6950c3c7260105
+  Boot ID:                    e8fb3f57-12e5-416a-b194-2b2febd6c113
+  Kernel Version:             4.15.0-147-generic
+  OS Image:                   Ubuntu 18.04.5 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://1.3.3
+  Kubelet Version:            v1.18.0
+  Kube-Proxy Version:         v1.18.0
+Non-terminated Pods:          (4 in total)
+  Namespace                   Name                                        CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                                        ------------  ----------  ---------------  -------------  ---
+  default                     webweb-859f66846f-hbqrj                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         18m
+  kube-system                 calico-kube-controllers-7798c85854-f7778    0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d10h
+  kube-system                 calico-node-jcpms                           250m (25%)    0 (0%)      0 (0%)           0 (0%)         2d10h
+  kube-system                 coredns-5d65dd49c8-x9r4v                    100m (10%)    0 (0%)      70Mi (7%)        170Mi (19%)    2d10h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                350m (35%)  0 (0%)
+  memory             70Mi (7%)   170Mi (19%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:              <none>
+
+
+Name:               node-2
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=node-2
+                    kubernetes.io/os=linux
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Sat, 10 Jul 2021 15:02:05 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  node-2
+  AcquireTime:     <unset>
+  RenewTime:       Tue, 13 Jul 2021 01:36:15 +0000
+Conditions:
+  Type                 Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                 ------  -----------------                 ------------------                ------                       -------
+  NetworkUnavailable   False   Sat, 10 Jul 2021 15:02:28 +0000   Sat, 10 Jul 2021 15:02:28 +0000   CalicoIsUp                   Calico is running on this node
+  MemoryPressure       False   Tue, 13 Jul 2021 01:33:14 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure         False   Tue, 13 Jul 2021 01:33:14 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure          False   Tue, 13 Jul 2021 01:33:14 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                True    Tue, 13 Jul 2021 01:33:14 +0000   Sun, 11 Jul 2021 00:50:03 +0000   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  10.5.145.99
+  Hostname:    node-2
+Capacity:
+  cpu:                1
+  ephemeral-storage:  20145724Ki
+  hugepages-2Mi:      0
+  memory:             1008672Ki
+  pods:               110
+Allocatable:
+  cpu:                1
+  ephemeral-storage:  18566299208
+  hugepages-2Mi:      0
+  memory:             906272Ki
+  pods:               110
+System Info:
+  Machine ID:                 ed1b7b0a5c154828bb83de6aabefff30
+  System UUID:                ed1b7b0a5c154828bb83de6aabefff30
+  Boot ID:                    69e0e4cb-5488-466b-b44b-e69451bf449d
+  Kernel Version:             4.15.0-147-generic
+  OS Image:                   Ubuntu 18.04.5 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://1.3.3
+  Kubelet Version:            v1.18.0
+  Kube-Proxy Version:         v1.18.0
+Non-terminated Pods:          (3 in total)
+  Namespace                   Name                       CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                       ------------  ----------  ---------------  -------------  ---
+  default                     myfirstpod                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d7h
+  default                     webweb-859f66846f-z9gj4    0 (0%)        0 (0%)      0 (0%)           0 (0%)         18m
+  kube-system                 calico-node-sdft2          250m (25%)    0 (0%)      0 (0%)           0 (0%)         2d10h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                250m (25%)  0 (0%)
+  memory             0 (0%)      0 (0%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:              <none>
+
+
+Name:               node-3
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=node-3
+                    kubernetes.io/os=linux
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Sat, 10 Jul 2021 15:02:05 +0000
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  node-3
+  AcquireTime:     <unset>
+  RenewTime:       Tue, 13 Jul 2021 01:36:15 +0000
+Conditions:
+  Type                 Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                 ------  -----------------                 ------------------                ------                       -------
+  NetworkUnavailable   False   Sat, 10 Jul 2021 15:02:28 +0000   Sat, 10 Jul 2021 15:02:28 +0000   CalicoIsUp                   Calico is running on this node
+  MemoryPressure       False   Tue, 13 Jul 2021 01:34:17 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure         False   Tue, 13 Jul 2021 01:34:17 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure          False   Tue, 13 Jul 2021 01:34:17 +0000   Sat, 10 Jul 2021 15:02:05 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                True    Tue, 13 Jul 2021 01:34:17 +0000   Sun, 11 Jul 2021 00:50:03 +0000   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  10.5.9.59
+  Hostname:    node-3
+Capacity:
+  cpu:                1
+  ephemeral-storage:  20145724Ki
+  hugepages-2Mi:      0
+  memory:             1008672Ki
+  pods:               110
+Allocatable:
+  cpu:                1
+  ephemeral-storage:  18566299208
+  hugepages-2Mi:      0
+  memory:             906272Ki
+  pods:               110
+System Info:
+  Machine ID:                 5d2c9d5736ec4f95b7aebe709724e58e
+  System UUID:                5d2c9d5736ec4f95b7aebe709724e58e
+  Boot ID:                    0a2de737-747f-4a48-aa76-7cf03830ebf5
+  Kernel Version:             4.15.0-147-generic
+  OS Image:                   Ubuntu 18.04.5 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://1.3.3
+  Kubelet Version:            v1.18.0
+  Kube-Proxy Version:         v1.18.0
+Non-terminated Pods:          (3 in total)
+  Namespace                   Name                        CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                   ----                        ------------  ----------  ---------------  -------------  ---
+  default                     webweb-859f66846f-hxmws     0 (0%)        0 (0%)      0 (0%)           0 (0%)         18m
+  kube-system                 calico-node-9dm9r           250m (25%)    0 (0%)      0 (0%)           0 (0%)         2d10h
+  kube-system                 coredns-5d65dd49c8-gmbkb    100m (10%)    0 (0%)      70Mi (7%)        170Mi (19%)    2d10h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                350m (35%)  0 (0%)
+  memory             70Mi (7%)   170Mi (19%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:              <none>
