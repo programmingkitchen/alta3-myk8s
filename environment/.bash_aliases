@@ -1,5 +1,7 @@
 alias g='cd ~/myk8s'
 alias k='kubectl '
+alias kp='kubectl get pods'
+alias kd='kubectl get deployments'
 alias perm='chmod u+x *'
 alias st='cd ~/myk8s; git status'
 alias add='cd ~/myk8s; git add *'
