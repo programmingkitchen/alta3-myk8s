@@ -1,0 +1,77 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: docker-private-registry
+  name: docker-private-registry-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-private-registry
+  template:
+    metadata:
+      labels:
+        app: docker-private-registry
+    spec:
+      containers:
+      - image: registry:2
+        imagePullPolicy: IfNotPresent
+        name: docker-private-registry
+        env:
+        - name: REGISTRY_HTTP_ADDR
+          value: 0.0.0.0:5000
+        - name: REGISTRY_HTTP_TLS_CERTIFICATE
+          value: /certs/cert.crt
+        - name: REGISTRY_HTTP_TLS_KEY
+          value: /certs/cert.key
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /var/lib/registry
+          name: image-store
+        - mountPath: /certs
+          name: certs
+      volumes:
+      - emptyDir: {} # THIS IS NOT PERSISTENT! WILL DELETE WITH POD!
+        name: image-store
+      - name: certs
+        secret:
+          secretName: registry-tls
+          items:
+          - key: tls.crt
+            path: cert.crt
+            mode: 256 # 0400 in decimal
+          - key: tls.key
+            path: cert.key
+            mode: 256 # 0400 in decimal
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: docker-private-registry
+  name: docker-private-registry
+spec:
+  ports:
+  - nodePort: 30500
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: docker-private-registry
+  type: NodePort
+
+---
+apiVersion: v1
+kind: Secret
+data:
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVERENDQXZTZ0F3SUJBZ0lVTnlVdzIxbmFsZk1CR2JQdlV0TWVFMTg5eC9rd0RRWUpLb1pJaHZjTkFRRUwKQlFBd2NERUxNQWtHQTFVRUJoTUNWVk14RlRBVEJnTlZCQWdUREZCbGJtNXplV3gyWVc1cFlURVRNQkVHQTFVRQpCeE1LU0dGeWNtbHpZblZ5WnpFVE1CRUdBMVVFQ2hNS1MzVmlaWEp1WlhSbGN6RUxNQWtHQTFVRUN4TUNRMEV4CkV6QVJCZ05WQkFNVENrdDFZbVZ5Ym1WMFpYTXdIaGNOTWpFd056RXdNVFExTXpBd1doY05Nakl3TnpFd01UUTEKTXpBd1dqQnhNUXN3Q1FZRFZRUUdFd0pWVXpFVk1CTUdBMVVFQ0JNTVVHVnVibk41YkhaaGJtbGhNUk13RVFZRApWUVFIRXdwSVlYSnlhWE5pZFhKbk1STXdFUVlEVlFRS0V3cExkV0psY201bGRHVnpNU0V3SHdZRFZRUUxFeGhMCmRXSmxjbTVsZEdWeklGUm9aU0JCYkhSaE15QlhZWGt3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXcKZ2dFS0FvSUJBUUN1TzZJUHBoV0hkZkFYQ1BxTmxGYk10aTgzSHdKYU5lZzF2L3ZoaVlNc0pYdis4M01la1FqUwpNcTRFOXQ4Z3ptSUFQZXp3Ukl6YXRhWU5RVXJXcUJQMlJOamZuRU80bHplWG4yNUFMeXpuVk9QYk0yRVBNR0Y3CmFNd3prNHZOdlJLTEszdzZZczNhcEpOWUJUY0M1ZWhuekozTlZVbUd3WS9nY1FkSWxjczJLRFhCdlF3ekdBTHkKbUZrTFg5L2VwMlJJUTBTVEZrdVppUVc5Qk9JTFErbjNpb3F0b2grZnFGU3dtUzdDRDdOMHBZdlIybmJuVDlSOQpidVhQWDRtY3NnYnlnTXNOSmJNcW5PQTcvOWFlak5Tcm5WMmxZYUZXLy9HRWh3dFhBMks1dm5WRVZaSXlwbXhsCjg4cE5BRWF6bmVhcDI2blFtcFk4eFpjazNnaSs0b1F0QWdNQkFBR2pnWnd3Z1prd0RnWURWUjBQQVFIL0JBUUQKQWdXZ01CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFNQmdOVkhSTUJBZjhFQWpBQQpNQjBHQTFVZERnUVdCQlExN3BPZER2T1g1NlhORmtxeHNWUXRHL1lNMGpBZkJnTlZIU01FR0RBV2dCVEJtTFZiCkVPbjdEWFBYTEJOVUlwNXZnT0NqNERBYUJnTlZIUkVFRXpBUmdnbHNiMk5oYkdodmMzU0hCSDhBQUFFd0RRWUoKS29aSWh2Y05BUUVMQlFBRGdnRUJBRlYybTBsVUNBbUZ2N3pSYjVXRS9NZ0JzczhWS1MzRm9aejc2aWVpUDlxTgpjYWlEMDR5ZjEvaFBpaWdYRWlhbUpxRUtFdXlFK09uaW04WThYMFVCT3M4eVNQbnpwa09tWXlYS0dDVDZDemVaCldDTGhDaGpOdnlSRmx4bmk1Yy9tN0FybUJLZWZ1bEF3WlAvalRMVVFhaDdxQzNsWGNIUGZYYUk3aHpVTnU5ZUQKMTAxYmJoTUM0TWRhdkRWR2RHWkl1VWNickFxVUtiNmJFc21MK0kxbWNyZTZEY0l4b3FlVmQ0Z2RLbXJ5Z0FWQgp2cUp4dk82VW50SGFpNWExZ1orRFUyRTIvaGNBdXR4cmhPemEzWjZsQm1GM0M2T3ZJdEhDY2VaREdvOThqOWNmClV4NDZQbFpWbU1IeGl0MWtmWlBTaGd4SzBIQ0pWSXVRUVBzUUxJU3dHSW89Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K # You will run a sed command to replace this variable
+  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBcmp1aUQ2WVZoM1h3RndqNmpaUld6TFl2Tng4Q1dqWG9OYi83NFltRExDVjcvdk56CkhwRUkwakt1QlBiZklNNWlBRDNzOEVTTTJyV21EVUZLMXFnVDlrVFkzNXhEdUpjM2w1OXVRQzhzNTFUajJ6TmgKRHpCaGUyak1NNU9MemIwU2l5dDhPbUxOMnFTVFdBVTNBdVhvWjh5ZHpWVkpoc0dQNEhFSFNKWExOaWcxd2IwTQpNeGdDOHBoWkMxL2YzcWRrU0VORWt4WkxtWWtGdlFUaUMwUHA5NHFLcmFJZm42aFVzSmt1d2cremRLV0wwZHAyCjUwL1VmVzdsejErSm5MSUc4b0RMRFNXektwemdPLy9Xbm96VXE1MWRwV0doVnYveGhJY0xWd05pdWI1MVJGV1MKTXFac1pmUEtUUUJHczUzbXFkdXAwSnFXUE1XWEpONEl2dUtFTFFJREFRQUJBb0lCQUhiK1pUMVl5Y1ZkSjk4agprN01VQjRBQ1FSYmRSOGNDb0JmdGlZSk1YMWpNTlBZM29IelV3dmlFQWxPRG8zb05XZU1lWis3a2NtcUF1dXE4CmwvY29qWkdaRGFFU1lUSDFuTk1oNExOWFJNeXRMbjByaHZOUHNKUVBTNzlCMnE1bG5mK01jR2lUeUZHMktxZG4KMEYxYlZiRm1qck9JdHhHZ3FybTNtQ2piblJEYm5pY2FxWnVqcmo2ZlFlbFo4QWRSZnVyZWJiaS95M3ZHNlF5QgphWjlVMUQ5bUM0TjBiRGVuK0l4eWZwWGVLcThpNkdSakxxOC9HYkFCWTRvMzlOcHhRaFZDMkFSNjYxUHZPM0k0CjVHNGFFOXZSMUtjODNtNmlmVUV2dkFPU00xeXQzZTZDYlcyS0JTNGcyVEIyeEYyanc1U1hLTTRQblppMzk0NVgKUVloTnNVVUNnWUVBNDdRMjZyaGJneDZzQkZKcDVxa3hka0RZZFppSFh6cjNyc29XK3FCMzNvYkJYbDFXN3pUaApaK2NJa3dzbVVmaVBXek5uQUtZbTY5QWRKcmlKVkZLK05sWkg4YlJadURua0FwZklsdUY4cVExd1JlMituTUIxCmNtcUZ1NVpobjROSGs5NXNQUHQ3TkJKZU1Dd2lseVhZTXZtdGYzYnFDUkd5dndkaEx1Z0tmUDhDZ1lFQXcrSmgKOWxGMmJoNVRWaUc1NUxuTHdXMFM4UjRYT1UrVEdpMDV5aktXdCtIL0VCdWJHVElGYThVT3dmKzNnbGQwbXMvRQpaSW5wejhBeGZEZ0V3TkhzQXEwTEtPNmdMbVpSWnpqUUR6UGxEUmZvRGlwVHpIb0hscmdtWU91MFVTcU1uMkdZCnpXbFNHOUJZRjYvdHRudkluS1JwT29rTGZQQ29MRyt5Q0NFOGd0TUNnWUJncVlkS214cVdEZlkrRzNKRGJmM0cKVW43UlpQL0txSEN1cmJHVmtYdHhac2s5c3VnTndlZ1NRSngrTjVSNzVjV05sTU9jSGV5VjNKSVRkdkV0YjdhNQp3R1RvTVlTSTFXSjZ5MDVtNXJBUjM5ZVNoL3VMOVpPbUQ1eFg1dDNvWmtXRGV6OTluOUJNYWFPOFZYQVZ0QVlVCmxiTldVZmZHQTlKYWo5cHNuQ3FmcHdLQmdFY0VQQi9oU042RGdCTXFCd3Mxa1BsL1llNm95aUt0QnRmbXJaencKMmxPd1M1aTdhVytwQXU0ZmMwcENPM1cxMzBDQk11S0FYWlJFU2F5UFlxbkZjWnRHd1ZVRnJtMGtDejh4Q2IxNQpRd0dNT1VWcGN4Z2U1Y0Z1NGZzaGVTNDBEdWQ1cXJ4T0FzYXlzajFrT3ZwOXhpMkVMZUphN1I5TzRLbTdsUC85CmpNS2hBb0dCQUoyNjRqSDc5RlJ5WmZjY0p4N3QzOUVmN0xVbXA3TGZtd1k4Nlg0KzVhUUc1TkZkL2V6UFBOT1oKQmRWVGJlUWw1dy90VGNHVDdmQm1pUnZsM3RhTlk4S2MxajdzTzBPWnBxcHVIL0dNZTBhSFpLMDVnLy9ZWXp3dwpWWnpKYU9OMVl6S0dtUUd4OGZYQTZZUXFnTzR6aTNQYTgxWTJCVzhYMlBpVHNEaGtnOFNSCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg== # and another sed command to fill in this one
+metadata:
+  name: registry-tls
+  namespace: default
+type: Opaque
+
