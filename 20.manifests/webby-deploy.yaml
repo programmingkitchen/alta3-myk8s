@@ -4,19 +4,19 @@ kind: Deployment
 metadata:
   name: webservice
   labels:
-    app: myk8swebby
+    app: webby
 spec:
   selector:
     matchLabels:
-      app: myk8swebby
+      app: webby
   replicas: 3
   template:
     metadata:
       labels:
-        app: myk8swebby
+        app: webby
     spec:
       containers:
-      - name: myk8swebby
+      - name: webby
         image: bchd.regisry/alta3-webby
         ports:
         - containerPort: 8888
