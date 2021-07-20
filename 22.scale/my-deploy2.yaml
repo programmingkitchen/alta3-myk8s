@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: mymicro-deploy 
+spec: 
+  replicas: 2 
+  selector: 
+    matchLabels: 
+      app: mymicro 
+  template: 
+    metadata: 
+      labels:
+        app: mymicro 
+    spec: 
+      containers:
+      - name: mycontainer 
+        image: mhausenblas/simpleservice:0.5.0 
+        ports:
+        - containerPort: 9876 
+        env:
+        - name: MY_VERSION
+          value: "1.1"
+

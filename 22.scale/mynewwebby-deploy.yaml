@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: mynewwebservice
+   labels:
+     app: webapp 
+spec:
+  selector:
+    matchLabels:
+      app: webapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: bchd.registry/granier-webby  # Or use your own webby image!
+        ports:
+        - containerPort: 80
+

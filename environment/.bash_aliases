@@ -1,5 +1,6 @@
 alias g='cd ~/myk8s'
 alias k='kubectl '
+alias kw="watch -n 2 'kubectl get pods'"
 alias kp='kubectl get pods'
 alias kpa='kubectl get pods --all-namespaces'
 alias kpw='kubectl get pods -o wide'
