@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webservice
+  name: mywebservice
   labels:
-    app: webby
+    app: myk8swebby
 spec:
   selector:
     matchLabels:
-      app: webby
+      app: myk8swebby
   replicas: 3
   template:
     metadata:
       labels:
-        app: webby
+        app: myk8swebby
     spec:
       containers:
-      - name: webby
-        image: bchd.regisry/alta3-webby
+      - name: myk8swebby
+        image: bchd.registry/granier-webby
         ports:
         - containerPort: 8888
