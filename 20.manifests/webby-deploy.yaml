@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: myk8swebby
-        image: bchd.regisry/granier-webby
+        image: bchd.regisry/alta3-webby
         ports:
         - containerPort: 8888
