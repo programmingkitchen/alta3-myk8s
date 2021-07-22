@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: granier-deploy 
+   labels:
+     app: rg 
+spec:
+  selector:
+    matchLabels:
+      app: rg 
+  replicas: 5 
+  template:
+    metadata:
+      labels:
+        app: rg 
+    spec:
+      containers:
+      - name: rg 
+        image: rgranier/webapprepo   # REPLACE WITH YOUR WEBBY IMAGE
+        ports:
+        - containerPort: 80 
