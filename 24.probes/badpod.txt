@@ -1,0 +1,51 @@
+Name:         badpod
+Namespace:    default
+Priority:     0
+Node:         node-2/10.14.214.119
+Start Time:   Sun, 25 Jul 2021 23:00:17 +0000
+Labels:       <none>
+Annotations:  Status:  Running
+IP:           192.168.247.7
+IPs:
+  IP:  192.168.247.7
+Containers:
+  sise:
+    Container ID:   containerd://2b500c59edb87ee46f5b946f58def3b0b79f50289f545483cd36991974738995
+    Image:          mhausenblas/simpleservice:0.5.0
+    Image ID:       docker.io/mhausenblas/simpleservice@sha256:33f589ea71cc8a0e37a2f4b17c2e3c207a69c2df525aa62ef5451b75638fd966
+    Port:           9876/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Sun, 25 Jul 2021 23:00:18 +0000
+    Ready:          True
+    Restart Count:  0
+    Liveness:       http-get http://:9876/health delay=2s timeout=1s period=5s #success=1 #failure=3
+    Environment:
+      HEALTH_MIN:  2000
+      HEALTH_MAX:  4000
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gk5th (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-gk5th:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-gk5th
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason     Age                From               Message
+  ----     ------     ----               ----               -------
+  Normal   Scheduled  25s                default-scheduler  Successfully assigned default/badpod to node-2
+  Normal   Pulled     24s                kubelet, node-2    Container image "mhausenblas/simpleservice:0.5.0" already present on machine
+  Normal   Created    24s                kubelet, node-2    Created container sise
+  Normal   Started    24s                kubelet, node-2    Started container sise
+  Warning  Unhealthy  10s (x3 over 20s)  kubelet, node-2    Liveness probe failed: Get http://192.168.247.7:9876/health: net/http: request canceled (Client.Timeout exceeded while awaiting headers)
+  Normal   Killing    10s                kubelet, node-2    Container sise failed liveness probe, will be restarted

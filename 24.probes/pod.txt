@@ -1,0 +1,47 @@
+Name:         sise-lp
+Namespace:    default
+Priority:     0
+Node:         node-1/10.5.97.115
+Start Time:   Sun, 25 Jul 2021 22:53:12 +0000
+Labels:       <none>
+Annotations:  Status:  Running
+IP:           192.168.84.132
+IPs:
+  IP:  192.168.84.132
+Containers:
+  sise:
+    Container ID:   containerd://8c078f46c4f902d6dbe624ae0939a7fdc6de8bb5569e80e02ab3ef492ca5b5b1
+    Image:          mhausenblas/simpleservice:0.5.0
+    Image ID:       docker.io/mhausenblas/simpleservice@sha256:33f589ea71cc8a0e37a2f4b17c2e3c207a69c2df525aa62ef5451b75638fd966
+    Port:           9876/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Sun, 25 Jul 2021 22:53:13 +0000
+    Ready:          True
+    Restart Count:  0
+    Liveness:       http-get http://:9876/health delay=2s timeout=1s period=5s #success=1 #failure=3
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gk5th (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-gk5th:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-gk5th
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  110s  default-scheduler  Successfully assigned default/sise-lp to node-1
+  Normal  Pulled     109s  kubelet, node-1    Container image "mhausenblas/simpleservice:0.5.0" already present on machine
+  Normal  Created    109s  kubelet, node-1    Created container sise
+  Normal  Started    109s  kubelet, node-1    Started container sise
