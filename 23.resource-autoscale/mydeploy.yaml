@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myscale-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myscale 
+  template:
+    metadata:
+      labels:
+        app: myscale 
+    spec:
+      containers:
+      - name: mycale
+        image: mhausenblas/simpleservice:0.5.0
+        ports:
+        - containerPort: 9876
+        env:
+        - name: SIMPLE_SERVICE_VERSION
+          value: "2.0"
+        resources:
+          requests:
+            cpu: '100m'
+            memory: '256Mi'
+          limits:
+            cpu: '200m'
+            memory: '256Mi'
+
