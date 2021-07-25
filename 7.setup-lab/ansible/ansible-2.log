@@ -1,0 +1,551 @@
+2021-07-25 20:46:34,572 p=14524 u=student n=ansible | [DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. Current version: 3.6.9
+ (default, Jan 26 2021, 15:33:00) [GCC 8.4.0]. This feature will be removed from ansible-core in version 2.12. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2021-07-25 20:46:35,603 p=14524 u=student n=ansible | PLAY [bootstrap] ********************************************************************************************************************
+2021-07-25 20:46:37,953 p=14524 u=student n=ansible | TASK [Gathering Facts] **************************************************************************************************************
+2021-07-25 20:46:37,954 p=14524 u=student n=ansible | ok: [node-2]
+2021-07-25 20:46:38,061 p=14524 u=student n=ansible | ok: [node-1]
+2021-07-25 20:46:38,082 p=14524 u=student n=ansible | ok: [master-3]
+2021-07-25 20:46:38,086 p=14524 u=student n=ansible | ok: [master-2]
+2021-07-25 20:46:38,098 p=14524 u=student n=ansible | ok: [master-1]
+2021-07-25 20:46:39,606 p=14524 u=student n=ansible | ok: [node-3]
+2021-07-25 20:46:45,276 p=14524 u=student n=ansible | TASK [bootstrap : raw apt update 1] *************************************************************************************************
+2021-07-25 20:46:45,277 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:46:45,531 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:46:45,574 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:46:45,681 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:46:45,768 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:46:50,795 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:46:51,743 p=14524 u=student n=ansible | TASK [bootstrap : raw apt upgrade 1] ************************************************************************************************
+2021-07-25 20:46:51,744 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:46:51,795 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:46:51,821 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:46:51,824 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:46:51,845 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:46:52,516 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:46:55,252 p=14524 u=student n=ansible | TASK [bootstrap : raw apt update 2] *************************************************************************************************
+2021-07-25 20:46:55,253 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:46:55,279 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:46:55,349 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:46:55,456 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:46:55,459 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:46:57,720 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:46:58,655 p=14524 u=student n=ansible | TASK [bootstrap : raw apt upgrade 2] ************************************************************************************************
+2021-07-25 20:46:58,656 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:46:58,700 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:46:58,716 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:46:58,720 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:46:58,751 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:46:59,395 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:47:07,490 p=14524 u=student n=ansible | TASK [bootstrap : raw apt install python] *******************************************************************************************
+2021-07-25 20:47:07,491 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:47:07,587 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:47:07,647 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:47:07,676 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:47:07,761 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:47:15,093 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:47:17,263 p=14524 u=student n=ansible | TASK [bootstrap : Update /etc/hosts on all systems] *********************************************************************************
+2021-07-25 20:47:17,265 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:47:17,266 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:47:17,267 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:47:17,289 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:47:17,301 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:47:18,279 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:47:18,382 p=14524 u=student n=ansible | PLAY [make certs & gen configs] *****************************************************************************************************
+2021-07-25 20:47:19,451 p=14524 u=student n=ansible | TASK [Gathering Facts] **************************************************************************************************************
+2021-07-25 20:47:19,452 p=14524 u=student n=ansible | ok: [localhost]
+2021-07-25 20:47:19,948 p=14524 u=student n=ansible | TASK [make_certs : Create cert directories] *****************************************************************************************
+2021-07-25 20:47:19,949 p=14524 u=student n=ansible | changed: [localhost] => (item=/home/student/k8s-certs)
+2021-07-25 20:47:20,215 p=14524 u=student n=ansible | changed: [localhost] => (item=/home/student/k8s-config)
+2021-07-25 20:47:20,481 p=14524 u=student n=ansible | changed: [localhost] => (item=/home/student/k8s-config/csr/)
+2021-07-25 20:47:22,049 p=14524 u=student n=ansible | TASK [make_certs : Install dependencies with get_url -> cfssl, cfssljson, kubectl] **************************************************
+2021-07-25 20:47:22,051 p=14524 u=student n=ansible | changed: [localhost] => (item={'url': 'https://github.com/cloudflare/cfssl/releases/download/v1.4.1/cfssl_1.4.1_linux_amd64', 'dest': '/usr/local/bin/cfssl', 'mode': '0755'})
+2021-07-25 20:47:22,988 p=14524 u=student n=ansible | changed: [localhost] => (item={'url': 'https://github.com/cloudflare/cfssl/releases/download/v1.4.1/cfssljson_1.4.1_linux_amd64', 'dest': '/usr/local/bin/cfssljson', 'mode': '0755'})
+2021-07-25 20:47:24,283 p=14524 u=student n=ansible | changed: [localhost] => (item={'url': 'https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl', 'dest': '/usr/local/bin/kubectl', 'mode': '0755'})
+2021-07-25 20:47:24,869 p=14524 u=student n=ansible | TASK [make_certs : Deploy configuration templates] **********************************************************************************
+2021-07-25 20:47:24,872 p=14524 u=student n=ansible | changed: [localhost] => (item=ca-config)
+2021-07-25 20:47:25,473 p=14524 u=student n=ansible | TASK [make_certs : Deploy certificate generation (csr) templates] *******************************************************************
+2021-07-25 20:47:25,475 p=14524 u=student n=ansible | changed: [localhost] => (item=ca)
+2021-07-25 20:47:25,964 p=14524 u=student n=ansible | changed: [localhost] => (item=admin)
+2021-07-25 20:47:26,488 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-controller-manager)
+2021-07-25 20:47:27,028 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-proxy)
+2021-07-25 20:47:27,565 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-scheduler)
+2021-07-25 20:47:28,061 p=14524 u=student n=ansible | changed: [localhost] => (item=kubernetes)
+2021-07-25 20:47:28,608 p=14524 u=student n=ansible | changed: [localhost] => (item=registry-web)
+2021-07-25 20:47:29,140 p=14524 u=student n=ansible | changed: [localhost] => (item=front-proxy-client)
+2021-07-25 20:47:29,712 p=14524 u=student n=ansible | TASK [make_certs : Generate misc service configuration templates] *******************************************************************
+2021-07-25 20:47:29,713 p=14524 u=student n=ansible | changed: [localhost] => (item={'src': '/home/student/git/kubernetes-the-alta3-way/roles/make_certs/templates/kube-scheduler.yaml.j2', 'dest': '/home/student/k8s-config/kube-scheduler.yaml'})
+2021-07-25 20:47:30,308 p=14524 u=student n=ansible | TASK [make_certs : Generate the certificate config file for nodes (file same on all nodes)] *****************************************
+2021-07-25 20:47:30,308 p=14524 u=student n=ansible | changed: [localhost] => (item=node-1)
+2021-07-25 20:47:30,856 p=14524 u=student n=ansible | changed: [localhost] => (item=node-2)
+2021-07-25 20:47:31,383 p=14524 u=student n=ansible | changed: [localhost] => (item=node-3)
+2021-07-25 20:47:32,154 p=14524 u=student n=ansible | TASK [make_certs : Generate a self-signed CA cert and private key for the k8s cloud] ************************************************
+2021-07-25 20:47:32,155 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:32,983 p=14524 u=student n=ansible | TASK [make_certs : Generate Certificate and private key for k8s API server and etcd] ************************************************
+2021-07-25 20:47:32,984 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:33,750 p=14524 u=student n=ansible | TASK [make_certs : Generate admin certificates] *************************************************************************************
+2021-07-25 20:47:33,751 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:34,290 p=14524 u=student n=ansible | TASK [make_certs : Generate kube-controller-manager client cert and private key] ****************************************************
+2021-07-25 20:47:34,291 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:34,759 p=14524 u=student n=ansible | TASK [make_certs : Generate kube-proxy client cert and private key] *****************************************************************
+2021-07-25 20:47:34,761 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:35,249 p=14524 u=student n=ansible | TASK [make_certs : Generate kube-scheduler client cert and private key] *************************************************************
+2021-07-25 20:47:35,249 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:36,424 p=14524 u=student n=ansible | TASK [make_certs : Generate registry web cert and private key] **********************************************************************
+2021-07-25 20:47:36,425 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:37,100 p=14524 u=student n=ansible | TASK [make_certs : Generate front-proxy-client (kube-apiserver aggregation layer) cert and private key] *****************************
+2021-07-25 20:47:37,101 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:38,015 p=14524 u=student n=ansible | TASK [make_certs : Generate the specific certificate and Private key for each node when it does not already exist] ******************
+2021-07-25 20:47:38,016 p=14524 u=student n=ansible | changed: [localhost] => (item=node-1)
+2021-07-25 20:47:38,707 p=14524 u=student n=ansible | changed: [localhost] => (item=node-2)
+2021-07-25 20:47:39,509 p=14524 u=student n=ansible | changed: [localhost] => (item=node-3)
+2021-07-25 20:47:39,977 p=14524 u=student n=ansible | TASK [make_certs : Discover if encryption config has already been generated] ********************************************************
+2021-07-25 20:47:39,977 p=14524 u=student n=ansible | ok: [localhost]
+2021-07-25 20:47:40,304 p=14524 u=student n=ansible | TASK [make_certs : Generate an encryption key] **************************************************************************************
+2021-07-25 20:47:40,305 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:40,906 p=14524 u=student n=ansible | TASK [make_certs : Generate the encryption config file] *****************************************************************************
+2021-07-25 20:47:40,906 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:41,270 p=14524 u=student n=ansible | TASK [make_certs : Create symbolic links to all generated certificates (k8s best practice names)] ***********************************
+2021-07-25 20:47:41,271 p=14524 u=student n=ansible | changed: [localhost] => (item=ca)
+2021-07-25 20:47:41,526 p=14524 u=student n=ansible | changed: [localhost] => (item=admin)
+2021-07-25 20:47:41,813 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-controller-manager)
+2021-07-25 20:47:42,097 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-proxy)
+2021-07-25 20:47:42,384 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-scheduler)
+2021-07-25 20:47:42,657 p=14524 u=student n=ansible | changed: [localhost] => (item=kubernetes)
+2021-07-25 20:47:42,923 p=14524 u=student n=ansible | changed: [localhost] => (item=registry-web)
+2021-07-25 20:47:43,225 p=14524 u=student n=ansible | changed: [localhost] => (item=front-proxy-client)
+2021-07-25 20:47:43,563 p=14524 u=student n=ansible | TASK [make_certs : Create symbolic links to all generated keys (k8s best practice names)] *******************************************
+2021-07-25 20:47:43,563 p=14524 u=student n=ansible | changed: [localhost] => (item=ca)
+2021-07-25 20:47:43,824 p=14524 u=student n=ansible | changed: [localhost] => (item=admin)
+2021-07-25 20:47:44,083 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-controller-manager)
+2021-07-25 20:47:44,382 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-proxy)
+2021-07-25 20:47:44,669 p=14524 u=student n=ansible | changed: [localhost] => (item=kube-scheduler)
+2021-07-25 20:47:44,965 p=14524 u=student n=ansible | changed: [localhost] => (item=kubernetes)
+2021-07-25 20:47:45,247 p=14524 u=student n=ansible | changed: [localhost] => (item=registry-web)
+2021-07-25 20:47:45,514 p=14524 u=student n=ansible | changed: [localhost] => (item=front-proxy-client)
+2021-07-25 20:47:45,963 p=14524 u=student n=ansible | TASK [kube_config : Setup the config file for each node] ****************************************************************************
+2021-07-25 20:47:45,965 p=14524 u=student n=ansible | changed: [localhost] => (item=node-1)
+2021-07-25 20:47:46,350 p=14524 u=student n=ansible | changed: [localhost] => (item=node-2)
+2021-07-25 20:47:46,715 p=14524 u=student n=ansible | changed: [localhost] => (item=node-3)
+2021-07-25 20:47:47,159 p=14524 u=student n=ansible | TASK [kube_config : Setup the credentials for each node] ****************************************************************************
+2021-07-25 20:47:47,160 p=14524 u=student n=ansible | changed: [localhost] => (item=node-1)
+2021-07-25 20:47:47,520 p=14524 u=student n=ansible | changed: [localhost] => (item=node-2)
+2021-07-25 20:47:47,886 p=14524 u=student n=ansible | changed: [localhost] => (item=node-3)
+2021-07-25 20:47:48,331 p=14524 u=student n=ansible | TASK [kube_config : Setup the context default for each node] ************************************************************************
+2021-07-25 20:47:48,332 p=14524 u=student n=ansible | changed: [localhost] => (item=node-1)
+2021-07-25 20:47:48,726 p=14524 u=student n=ansible | changed: [localhost] => (item=node-2)
+2021-07-25 20:47:49,110 p=14524 u=student n=ansible | changed: [localhost] => (item=node-3)
+2021-07-25 20:47:49,562 p=14524 u=student n=ansible | TASK [kube_config : Setup the use-context default for each node] ********************************************************************
+2021-07-25 20:47:49,563 p=14524 u=student n=ansible | changed: [localhost] => (item=node-1)
+2021-07-25 20:47:49,914 p=14524 u=student n=ansible | changed: [localhost] => (item=node-2)
+2021-07-25 20:47:50,289 p=14524 u=student n=ansible | changed: [localhost] => (item=node-3)
+2021-07-25 20:47:50,722 p=14524 u=student n=ansible | TASK [kube_config : auth kubeconfig files - multiple services - create] *************************************************************
+2021-07-25 20:47:50,723 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-proxy.kubeconfig)
+2021-07-25 20:47:51,049 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-controller-manager.kubeconfig)
+2021-07-25 20:47:51,399 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-scheduler.kubeconfig)
+2021-07-25 20:47:51,731 p=14524 u=student n=ansible | changed: [localhost] => (item=config=admin.kubeconfig)
+2021-07-25 20:47:52,204 p=14524 u=student n=ansible | TASK [kube_config : auth kubeconfig - multiple services - set credentials] **********************************************************
+2021-07-25 20:47:52,205 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-proxy.kubeconfig)
+2021-07-25 20:47:52,554 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-controller-manager.kubeconfig)
+2021-07-25 20:47:52,919 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-scheduler.kubeconfig)
+2021-07-25 20:47:53,251 p=14524 u=student n=ansible | changed: [localhost] => (item=config=admin.kubeconfig)
+2021-07-25 20:47:53,681 p=14524 u=student n=ansible | TASK [kube_config : auth kubeconfig - multiple services - set context] **************************************************************
+2021-07-25 20:47:53,683 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-proxy.kubeconfig)
+2021-07-25 20:47:54,022 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-controller-manager.kubeconfig)
+2021-07-25 20:47:54,369 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-scheduler.kubeconfig)
+2021-07-25 20:47:54,725 p=14524 u=student n=ansible | changed: [localhost] => (item=config=admin.kubeconfig)
+2021-07-25 20:47:55,205 p=14524 u=student n=ansible | TASK [kube_config : auth kubeconfig - muiltiple services - use context] *************************************************************
+2021-07-25 20:47:55,207 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-proxy.kubeconfig)
+2021-07-25 20:47:55,550 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-controller-manager.kubeconfig)
+2021-07-25 20:47:55,911 p=14524 u=student n=ansible | changed: [localhost] => (item=config=kube-scheduler.kubeconfig)
+2021-07-25 20:47:56,258 p=14524 u=student n=ansible | changed: [localhost] => (item=config=admin.kubeconfig)
+2021-07-25 20:47:56,664 p=14524 u=student n=ansible | TASK [localhost_config : bchd-k8s-config - setup localhost loadbalancer for kubectl (as admin)] *************************************
+2021-07-25 20:47:56,665 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:57,032 p=14524 u=student n=ansible | TASK [localhost_config : bchd-k8s-config - setup creds for admin user] **************************************************************
+2021-07-25 20:47:57,032 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:57,401 p=14524 u=student n=ansible | TASK [localhost_config : bchd-k8s-config - setup context for the admin user] ********************************************************
+2021-07-25 20:47:57,402 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:57,791 p=14524 u=student n=ansible | TASK [localhost_config : bchd-k8s-config - setup use-context for the admin user] ****************************************************
+2021-07-25 20:47:57,792 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:47:57,841 p=14524 u=student n=ansible | PLAY [deploy etcd] ******************************************************************************************************************
+2021-07-25 20:47:58,900 p=14524 u=student n=ansible | TASK [Gathering Facts] **************************************************************************************************************
+2021-07-25 20:47:58,902 p=14524 u=student n=ansible | ok: [master-2]
+2021-07-25 20:47:58,906 p=14524 u=student n=ansible | ok: [master-1]
+2021-07-25 20:47:58,910 p=14524 u=student n=ansible | ok: [master-3]
+2021-07-25 20:47:59,384 p=14524 u=student n=ansible | TASK [etcd : Create etcd directories] ***********************************************************************************************
+2021-07-25 20:47:59,385 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:47:59,413 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:47:59,434 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:48:00,374 p=14524 u=student n=ansible | TASK [etcd : Copy Certs and Config to Masters] **************************************************************************************
+2021-07-25 20:48:00,376 p=14524 u=student n=ansible | changed: [master-3] => (item={'source': '/home/student/k8s-certs/ca.pem', 'dest': '/etc/etcd//ca.pem', 'mode': '0664'})
+2021-07-25 20:48:00,403 p=14524 u=student n=ansible | changed: [master-1] => (item={'source': '/home/student/k8s-certs/ca.pem', 'dest': '/etc/etcd//ca.pem', 'mode': '0664'})
+2021-07-25 20:48:00,441 p=14524 u=student n=ansible | changed: [master-2] => (item={'source': '/home/student/k8s-certs/ca.pem', 'dest': '/etc/etcd//ca.pem', 'mode': '0664'})
+2021-07-25 20:48:01,221 p=14524 u=student n=ansible | changed: [master-3] => (item={'source': '/home/student/k8s-certs/kubernetes.pem', 'dest': '/etc/etcd//kubernetes.pem', 'mode': '0664'})
+2021-07-25 20:48:01,223 p=14524 u=student n=ansible | changed: [master-1] => (item={'source': '/home/student/k8s-certs/kubernetes.pem', 'dest': '/etc/etcd//kubernetes.pem', 'mode': '0664'})
+2021-07-25 20:48:01,244 p=14524 u=student n=ansible | changed: [master-2] => (item={'source': '/home/student/k8s-certs/kubernetes.pem', 'dest': '/etc/etcd//kubernetes.pem', 'mode': '0664'})
+2021-07-25 20:48:02,026 p=14524 u=student n=ansible | changed: [master-1] => (item={'source': '/home/student/k8s-certs/kubernetes-key.pem', 'dest': '/etc/etcd//kubernetes-key.pem', 'mode': '0600'})
+2021-07-25 20:48:02,036 p=14524 u=student n=ansible | changed: [master-2] => (item={'source': '/home/student/k8s-certs/kubernetes-key.pem', 'dest': '/etc/etcd//kubernetes-key.pem', 'mode': '0600'})
+2021-07-25 20:48:02,065 p=14524 u=student n=ansible | changed: [master-3] => (item={'source': '/home/student/k8s-certs/kubernetes-key.pem', 'dest': '/etc/etcd//kubernetes-key.pem', 'mode': '0600'})
+2021-07-25 20:48:05,475 p=14524 u=student n=ansible | TASK [etcd : Unpack the etcd binaries on each master] *******************************************************************************
+2021-07-25 20:48:05,477 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:48:05,989 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:48:06,200 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:48:06,849 p=14524 u=student n=ansible | TASK [etcd : Move etcd binaries to /usr/local/bin path] *****************************************************************************
+2021-07-25 20:48:06,849 p=14524 u=student n=ansible | changed: [master-2] => (item={'source': '/tmp/etcd-v3.4.6-linux-amd64/etcd', 'dest': '/usr/local/bin/etcd'})
+2021-07-25 20:48:06,860 p=14524 u=student n=ansible | changed: [master-1] => (item={'source': '/tmp/etcd-v3.4.6-linux-amd64/etcd', 'dest': '/usr/local/bin/etcd'})
+2021-07-25 20:48:06,947 p=14524 u=student n=ansible | changed: [master-3] => (item={'source': '/tmp/etcd-v3.4.6-linux-amd64/etcd', 'dest': '/usr/local/bin/etcd'})
+2021-07-25 20:48:07,346 p=14524 u=student n=ansible | changed: [master-2] => (item={'source': '/tmp/etcd-v3.4.6-linux-amd64/etcdctl', 'dest': '/usr/local/bin/etcdctl'})
+2021-07-25 20:48:07,360 p=14524 u=student n=ansible | changed: [master-1] => (item={'source': '/tmp/etcd-v3.4.6-linux-amd64/etcdctl', 'dest': '/usr/local/bin/etcdctl'})
+2021-07-25 20:48:07,463 p=14524 u=student n=ansible | changed: [master-3] => (item={'source': '/tmp/etcd-v3.4.6-linux-amd64/etcdctl', 'dest': '/usr/local/bin/etcdctl'})
+2021-07-25 20:48:08,699 p=14524 u=student n=ansible | TASK [etcd : Push etcd service config] **********************************************************************************************
+2021-07-25 20:48:08,699 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:48:08,706 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:48:08,740 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:48:09,370 p=14524 u=student n=ansible | TASK [etcd : Reload systemd manager] ************************************************************************************************
+2021-07-25 20:48:09,370 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:48:09,395 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:48:09,400 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:48:10,884 p=14524 u=student n=ansible | TASK [etcd : Reload the daemon for the services] ************************************************************************************
+2021-07-25 20:48:10,885 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:48:10,889 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:48:10,896 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:48:10,960 p=14524 u=student n=ansible | PLAY [deploy k8s masters] ***********************************************************************************************************
+2021-07-25 20:48:12,047 p=14524 u=student n=ansible | TASK [Gathering Facts] **************************************************************************************************************
+2021-07-25 20:48:12,048 p=14524 u=student n=ansible | ok: [master-1]
+2021-07-25 20:48:12,065 p=14524 u=student n=ansible | ok: [master-2]
+2021-07-25 20:48:12,123 p=14524 u=student n=ansible | ok: [master-3]
+2021-07-25 20:48:12,629 p=14524 u=student n=ansible | TASK [master_install : Create k8s directories on masters] ***************************************************************************
+2021-07-25 20:48:12,630 p=14524 u=student n=ansible | ok: [master-1] => (item=/var/lib/etcd)
+2021-07-25 20:48:12,632 p=14524 u=student n=ansible | ok: [master-2] => (item=/var/lib/etcd)
+2021-07-25 20:48:12,680 p=14524 u=student n=ansible | ok: [master-3] => (item=/var/lib/etcd)
+2021-07-25 20:48:13,036 p=14524 u=student n=ansible | changed: [master-1] => (item=/var/lib/kubernetes)
+2021-07-25 20:48:13,047 p=14524 u=student n=ansible | changed: [master-2] => (item=/var/lib/kubernetes)
+2021-07-25 20:48:13,091 p=14524 u=student n=ansible | changed: [master-3] => (item=/var/lib/kubernetes)
+2021-07-25 20:48:14,069 p=14524 u=student n=ansible | TASK [master_install : Copy Certs and Config to Masters] ****************************************************************************
+2021-07-25 20:48:14,070 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-certs/ca.pem', 'dest': '/var/lib/kubernetes/ca.pem', 'mode': '0664'})
+2021-07-25 20:48:14,129 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-certs/ca.pem', 'dest': '/var/lib/kubernetes/ca.pem', 'mode': '0664'})
+2021-07-25 20:48:14,171 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-certs/ca.pem', 'dest': '/var/lib/kubernetes/ca.pem', 'mode': '0664'})
+2021-07-25 20:48:14,888 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-certs/ca-key.pem', 'dest': '/var/lib/kubernetes/ca-key.pem', 'mode': '0600'})
+2021-07-25 20:48:14,944 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-certs/ca-key.pem', 'dest': '/var/lib/kubernetes/ca-key.pem', 'mode': '0600'})
+2021-07-25 20:48:14,946 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-certs/ca-key.pem', 'dest': '/var/lib/kubernetes/ca-key.pem', 'mode': '0600'})
+2021-07-25 20:48:15,699 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-certs/kubernetes.pem', 'dest': '/var/lib/kubernetes/kubernetes.pem', 'mode': '0664'})
+2021-07-25 20:48:15,760 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-certs/kubernetes.pem', 'dest': '/var/lib/kubernetes/kubernetes.pem', 'mode': '0664'})
+2021-07-25 20:48:15,764 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-certs/kubernetes.pem', 'dest': '/var/lib/kubernetes/kubernetes.pem', 'mode': '0664'})
+2021-07-25 20:48:16,489 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-certs/kubernetes-key.pem', 'dest': '/var/lib/kubernetes/kubernetes-key.pem', 'mode': '0600'})
+2021-07-25 20:48:16,556 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-certs/kubernetes-key.pem', 'dest': '/var/lib/kubernetes/kubernetes-key.pem', 'mode': '0600'})
+2021-07-25 20:48:16,560 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-certs/kubernetes-key.pem', 'dest': '/var/lib/kubernetes/kubernetes-key.pem', 'mode': '0600'})
+2021-07-25 20:48:17,348 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-config/encryption-config.yaml', 'dest': '/var/lib/kubernetes/encryption-config.yaml', 'mode': '0600'})
+2021-07-25 20:48:17,366 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-config/encryption-config.yaml', 'dest': '/var/lib/kubernetes/encryption-config.yaml', 'mode': '0600'})
+2021-07-25 20:48:17,391 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-config/encryption-config.yaml', 'dest': '/var/lib/kubernetes/encryption-config.yaml', 'mode': '0600'})
+2021-07-25 20:48:18,166 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-config/kube-scheduler.yaml', 'dest': '/var/lib/kubernetes/kube-scheduler.yaml', 'mode': '0664'})
+2021-07-25 20:48:18,167 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-config/kube-scheduler.yaml', 'dest': '/var/lib/kubernetes/kube-scheduler.yaml', 'mode': '0664'})
+2021-07-25 20:48:18,175 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-config/kube-scheduler.yaml', 'dest': '/var/lib/kubernetes/kube-scheduler.yaml', 'mode': '0664'})
+2021-07-25 20:48:18,973 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-config/kube-scheduler.kubeconfig', 'dest': '/var/lib/kubernetes/kube-scheduler.kubeconfig', 'mode': '0664'})
+2021-07-25 20:48:18,997 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-config/kube-scheduler.kubeconfig', 'dest': '/var/lib/kubernetes/kube-scheduler.kubeconfig', 'mode': '0664'})
+2021-07-25 20:48:19,008 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-config/kube-scheduler.kubeconfig', 'dest': '/var/lib/kubernetes/kube-scheduler.kubeconfig', 'mode': '0664'})
+2021-07-25 20:48:19,781 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-config/kube-controller-manager.kubeconfig', 'dest': '/var/lib/kubernetes/kube-controller-manager.kubeconfig', 'mode': '0664'})
+2021-07-25 20:48:19,796 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-config/kube-controller-manager.kubeconfig', 'dest': '/var/lib/kubernetes/kube-controller-manager.kubeconfig', 'mode': '0664'})
+2021-07-25 20:48:19,811 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-config/kube-controller-manager.kubeconfig', 'dest': '/var/lib/kubernetes/kube-controller-manager.kubeconfig', 'mode': '0664'})
+2021-07-25 20:48:20,600 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-certs/kube-controller-manager-key.pem', 'dest': '/var/lib/kubernetes/kube-controller-manager-key.pem', 'mode': '0600'})
+2021-07-25 20:48:20,605 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-certs/kube-controller-manager-key.pem', 'dest': '/var/lib/kubernetes/kube-controller-manager-key.pem', 'mode': '0600'})
+2021-07-25 20:48:20,630 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-certs/kube-controller-manager-key.pem', 'dest': '/var/lib/kubernetes/kube-controller-manager-key.pem', 'mode': '0600'})
+2021-07-25 20:48:21,395 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-certs/kube-controller-manager.pem', 'dest': '/var/lib/kubernetes/kube-controller-manager.pem', 'mode': '0664'})
+2021-07-25 20:48:21,407 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-certs/kube-controller-manager.pem', 'dest': '/var/lib/kubernetes/kube-controller-manager.pem', 'mode': '0664'})
+2021-07-25 20:48:21,438 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-certs/kube-controller-manager.pem', 'dest': '/var/lib/kubernetes/kube-controller-manager.pem', 'mode': '0664'})
+2021-07-25 20:48:22,178 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-certs/front-proxy-client-key.pem', 'dest': '/var/lib/kubernetes/front-proxy-client-key.pem', 'mode': '0600'})
+2021-07-25 20:48:22,196 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-certs/front-proxy-client-key.pem', 'dest': '/var/lib/kubernetes/front-proxy-client-key.pem', 'mode': '0600'})
+2021-07-25 20:48:22,215 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-certs/front-proxy-client-key.pem', 'dest': '/var/lib/kubernetes/front-proxy-client-key.pem', 'mode': '0600'})
+2021-07-25 20:48:23,011 p=14524 u=student n=ansible | changed: [master-2] => (item={'src': '/home/student/k8s-certs/front-proxy-client.pem', 'dest': '/var/lib/kubernetes/front-proxy-client.pem', 'mode': '0664'})
+2021-07-25 20:48:23,023 p=14524 u=student n=ansible | changed: [master-1] => (item={'src': '/home/student/k8s-certs/front-proxy-client.pem', 'dest': '/var/lib/kubernetes/front-proxy-client.pem', 'mode': '0664'})
+2021-07-25 20:48:23,025 p=14524 u=student n=ansible | changed: [master-3] => (item={'src': '/home/student/k8s-certs/front-proxy-client.pem', 'dest': '/var/lib/kubernetes/front-proxy-client.pem', 'mode': '0664'})
+2021-07-25 20:48:27,276 p=14524 u=student n=ansible | TASK [master_install : Download the master service binaries] ************************************************************************
+2021-07-25 20:48:27,277 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes API Server -> /usr/local/bin/kube-apiserver)
+2021-07-25 20:48:27,478 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes API Server -> /usr/local/bin/kube-apiserver)
+2021-07-25 20:48:27,716 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes API Server -> /usr/local/bin/kube-apiserver)
+2021-07-25 20:48:31,092 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes Manager -> /usr/local/bin/kube-controller-manager)
+2021-07-25 20:48:31,178 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes Manager -> /usr/local/bin/kube-controller-manager)
+2021-07-25 20:48:31,628 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes Manager -> /usr/local/bin/kube-controller-manager)
+2021-07-25 20:48:32,838 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes Scheduler -> /usr/local/bin/kube-scheduler)
+2021-07-25 20:48:32,967 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes Scheduler -> /usr/local/bin/kube-scheduler)
+2021-07-25 20:48:33,621 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes Scheduler -> /usr/local/bin/kube-scheduler)
+2021-07-25 20:48:34,903 p=14524 u=student n=ansible | TASK [master_install : Push the config files for the master services] ***************************************************************
+2021-07-25 20:48:34,903 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes API Server -> /etc/systemd/system/kube-apiserver.service)
+2021-07-25 20:48:34,918 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes API Server -> /etc/systemd/system/kube-apiserver.service)
+2021-07-25 20:48:34,958 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes API Server -> /etc/systemd/system/kube-apiserver.service)
+2021-07-25 20:48:35,701 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes Manager -> /etc/systemd/system/kube-controller-manager.service)
+2021-07-25 20:48:35,753 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes Manager -> /etc/systemd/system/kube-controller-manager.service)
+2021-07-25 20:48:35,755 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes Manager -> /etc/systemd/system/kube-controller-manager.service)
+2021-07-25 20:48:36,549 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes Scheduler -> /etc/systemd/system/kube-scheduler.service)
+2021-07-25 20:48:36,557 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes Scheduler -> /etc/systemd/system/kube-scheduler.service)
+2021-07-25 20:48:36,579 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes Scheduler -> /etc/systemd/system/kube-scheduler.service)
+2021-07-25 20:48:38,496 p=14524 u=student n=ansible | TASK [master_install : Download Kubernetes kubectl] *********************************************************************************
+2021-07-25 20:48:38,496 p=14524 u=student n=ansible | changed: [master-2] => (item={'url': 'https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl', 'dest': '/usr/local/bin/kubectl', 'mode': '0755'})
+2021-07-25 20:48:38,686 p=14524 u=student n=ansible | changed: [master-1] => (item={'url': 'https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl', 'dest': '/usr/local/bin/kubectl', 'mode': '0755'})
+2021-07-25 20:48:38,807 p=14524 u=student n=ansible | changed: [master-3] => (item={'url': 'https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl', 'dest': '/usr/local/bin/kubectl', 'mode': '0755'})
+2021-07-25 20:48:39,621 p=14524 u=student n=ansible | TASK [master_install : Reload systemd manager] **************************************************************************************
+2021-07-25 20:48:39,624 p=14524 u=student n=ansible | ok: [master-1]
+2021-07-25 20:48:39,626 p=14524 u=student n=ansible | ok: [master-2]
+2021-07-25 20:48:39,639 p=14524 u=student n=ansible | ok: [master-3]
+2021-07-25 20:48:40,909 p=14524 u=student n=ansible | TASK [master_install : Reload the daemon for the services] **************************************************************************
+2021-07-25 20:48:40,910 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes API Server Service -> kube-apiserver)
+2021-07-25 20:48:40,935 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes API Server Service -> kube-apiserver)
+2021-07-25 20:48:40,980 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes API Server Service -> kube-apiserver)
+2021-07-25 20:48:41,847 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes Manager Service -> kube-controller-manager)
+2021-07-25 20:48:41,861 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes Manager Service -> kube-controller-manager)
+2021-07-25 20:48:41,897 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes Manager Service -> kube-controller-manager)
+2021-07-25 20:48:42,862 p=14524 u=student n=ansible | changed: [master-2] => (item=Kubernetes Scheduler Service -> kube-scheduler)
+2021-07-25 20:48:42,866 p=14524 u=student n=ansible | changed: [master-3] => (item=Kubernetes Scheduler Service -> kube-scheduler)
+2021-07-25 20:48:42,957 p=14524 u=student n=ansible | changed: [master-1] => (item=Kubernetes Scheduler Service -> kube-scheduler)
+2021-07-25 20:48:43,007 p=18823 u=student n=ansible | Pausing for 90 seconds
+2021-07-25 20:48:43,008 p=18823 u=student n=ansible | (ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+2021-07-25 20:50:13,012 p=14524 u=student n=ansible | TASK [master_install : Allow Kubernetes API Server to fully initialize] *************************************************************
+2021-07-25 20:50:13,014 p=14524 u=student n=ansible | ok: [master-1]
+2021-07-25 20:50:15,122 p=14524 u=student n=ansible | TASK [master_install : Create a route from masters to the service ip cidr] **********************************************************
+2021-07-25 20:50:15,123 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:50:15,188 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:50:15,199 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:50:15,699 p=14524 u=student n=ansible | TASK [master_install : execute ifup script to insert route from masters to service ip cidr] *****************************************
+2021-07-25 20:50:15,700 p=14524 u=student n=ansible | changed: [master-1]
+2021-07-25 20:50:15,735 p=14524 u=student n=ansible | changed: [master-3]
+2021-07-25 20:50:15,751 p=14524 u=student n=ansible | changed: [master-2]
+2021-07-25 20:50:15,817 p=14524 u=student n=ansible | PLAY [deploy load balancers] ********************************************************************************************************
+2021-07-25 20:50:17,785 p=14524 u=student n=ansible | TASK [nginx_localhost_load_balancer : Install nginx for localhost loadbalancing access to the HA masters] ***************************
+2021-07-25 20:50:17,786 p=14524 u=student n=ansible | ok: [localhost]
+2021-07-25 20:50:27,893 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:50:27,900 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:50:27,963 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:50:29,048 p=14524 u=student n=ansible | TASK [nginx_localhost_load_balancer : Create the config file for nginx] *************************************************************
+2021-07-25 20:50:29,048 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:50:29,261 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:50:29,282 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:50:29,305 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:50:30,399 p=14524 u=student n=ansible | TASK [nginx_localhost_load_balancer : Start the nginx service] **********************************************************************
+2021-07-25 20:50:30,399 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:50:30,407 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:50:30,431 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:50:30,455 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:50:31,309 p=14524 u=student n=ansible | TASK [trusted_ca : Copy k8s CA] *****************************************************************************************************
+2021-07-25 20:50:31,309 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:50:31,422 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:50:31,441 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:50:31,830 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:50:33,489 p=14524 u=student n=ansible | TASK [trusted_ca : Update Trusted Certificates] *************************************************************************************
+2021-07-25 20:50:33,491 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:50:33,530 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:50:33,576 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:50:34,500 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:50:34,593 p=14524 u=student n=ansible | PLAY [configure rbac] ***************************************************************************************************************
+2021-07-25 20:50:35,646 p=14524 u=student n=ansible | TASK [Gathering Facts] **************************************************************************************************************
+2021-07-25 20:50:35,647 p=14524 u=student n=ansible | ok: [localhost]
+2021-07-25 20:50:36,277 p=14524 u=student n=ansible | TASK [rbac : Copy rbac cluster-role to masters] *************************************************************************************
+2021-07-25 20:50:36,277 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:50:37,614 p=14524 u=student n=ansible | TASK [rbac : Apply the RBAC rules] **************************************************************************************************
+2021-07-25 20:50:37,615 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:50:38,186 p=14524 u=student n=ansible | TASK [rbac : Copy the cluster role bind file to the masters] ************************************************************************
+2021-07-25 20:50:38,187 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:50:38,828 p=14524 u=student n=ansible | TASK [rbac : Bind the clusterrole to the kubernetes user.] **************************************************************************
+2021-07-25 20:50:38,829 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:50:38,874 p=14524 u=student n=ansible | PLAY [deploy k8s nodes] *************************************************************************************************************
+2021-07-25 20:50:39,357 p=14524 u=student n=ansible | TASK [node_install : create directories for the kubernetes nodes] *******************************************************************
+2021-07-25 20:50:39,358 p=14524 u=student n=ansible | changed: [node-1] => (item=/etc/cni/net.d)
+2021-07-25 20:50:39,378 p=14524 u=student n=ansible | changed: [node-2] => (item=/etc/cni/net.d)
+2021-07-25 20:50:39,395 p=14524 u=student n=ansible | changed: [node-3] => (item=/etc/cni/net.d)
+2021-07-25 20:50:39,764 p=14524 u=student n=ansible | changed: [node-1] => (item=/opt/cni/bin)
+2021-07-25 20:50:39,797 p=14524 u=student n=ansible | changed: [node-2] => (item=/opt/cni/bin)
+2021-07-25 20:50:39,803 p=14524 u=student n=ansible | changed: [node-3] => (item=/opt/cni/bin)
+2021-07-25 20:50:40,170 p=14524 u=student n=ansible | changed: [node-2] => (item=/var/lib/kubelet)
+2021-07-25 20:50:40,184 p=14524 u=student n=ansible | changed: [node-1] => (item=/var/lib/kubelet)
+2021-07-25 20:50:40,238 p=14524 u=student n=ansible | changed: [node-3] => (item=/var/lib/kubelet)
+2021-07-25 20:50:40,582 p=14524 u=student n=ansible | changed: [node-1] => (item=/var/lib/kube-proxy)
+2021-07-25 20:50:40,583 p=14524 u=student n=ansible | changed: [node-2] => (item=/var/lib/kube-proxy)
+2021-07-25 20:50:40,637 p=14524 u=student n=ansible | changed: [node-3] => (item=/var/lib/kube-proxy)
+2021-07-25 20:50:41,011 p=14524 u=student n=ansible | changed: [node-1] => (item=/var/lib/kubernetes)
+2021-07-25 20:50:41,024 p=14524 u=student n=ansible | changed: [node-2] => (item=/var/lib/kubernetes)
+2021-07-25 20:50:41,074 p=14524 u=student n=ansible | changed: [node-3] => (item=/var/lib/kubernetes)
+2021-07-25 20:50:41,420 p=14524 u=student n=ansible | changed: [node-1] => (item=/var/run/kubernetes)
+2021-07-25 20:50:41,432 p=14524 u=student n=ansible | changed: [node-2] => (item=/var/run/kubernetes)
+2021-07-25 20:50:41,477 p=14524 u=student n=ansible | changed: [node-3] => (item=/var/run/kubernetes)
+2021-07-25 20:50:41,822 p=14524 u=student n=ansible | changed: [node-1] => (item=/etc/containerd/)
+2021-07-25 20:50:41,866 p=14524 u=student n=ansible | changed: [node-2] => (item=/etc/containerd/)
+2021-07-25 20:50:41,895 p=14524 u=student n=ansible | changed: [node-3] => (item=/etc/containerd/)
+2021-07-25 20:50:42,805 p=14524 u=student n=ansible | TASK [node_install : Copy Certs to Nodes] *******************************************************************************************
+2021-07-25 20:50:42,806 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/ca.pem)
+2021-07-25 20:50:42,860 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/ca.pem)
+2021-07-25 20:50:42,947 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/ca.pem)
+2021-07-25 20:50:43,568 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/ca-key.pem)
+2021-07-25 20:50:43,657 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/ca-key.pem)
+2021-07-25 20:50:43,698 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/ca-key.pem)
+2021-07-25 20:50:44,341 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/kubernetes.pem)
+2021-07-25 20:50:44,439 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/kubernetes.pem)
+2021-07-25 20:50:44,453 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/kubernetes.pem)
+2021-07-25 20:50:45,152 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/kubernetes-key.pem)
+2021-07-25 20:50:45,249 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/kubernetes-key.pem)
+2021-07-25 20:50:45,257 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/kubernetes-key.pem)
+2021-07-25 20:50:45,902 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/encryption-config.yaml)
+2021-07-25 20:50:45,983 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/encryption-config.yaml)
+2021-07-25 20:50:46,002 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/encryption-config.yaml)
+2021-07-25 20:50:46,695 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/kube-scheduler.yaml)
+2021-07-25 20:50:46,818 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/kube-scheduler.yaml)
+2021-07-25 20:50:46,845 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/kube-scheduler.yaml)
+2021-07-25 20:50:47,478 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/kube-scheduler.kubeconfig)
+2021-07-25 20:50:47,602 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/kube-scheduler.kubeconfig)
+2021-07-25 20:50:47,608 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/kube-scheduler.kubeconfig)
+2021-07-25 20:50:48,274 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/kube-controller-manager.kubeconfig)
+2021-07-25 20:50:48,370 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/kube-controller-manager.kubeconfig)
+2021-07-25 20:50:48,399 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/kube-controller-manager.kubeconfig)
+2021-07-25 20:50:49,047 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/kube-controller-manager-key.pem)
+2021-07-25 20:50:49,134 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/kube-controller-manager-key.pem)
+2021-07-25 20:50:49,201 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/kube-controller-manager-key.pem)
+2021-07-25 20:50:49,796 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/kube-controller-manager.pem)
+2021-07-25 20:50:49,895 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/kube-controller-manager.pem)
+2021-07-25 20:50:49,963 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/kube-controller-manager.pem)
+2021-07-25 20:50:50,554 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/front-proxy-client-key.pem)
+2021-07-25 20:50:50,630 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/front-proxy-client-key.pem)
+2021-07-25 20:50:50,689 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/front-proxy-client-key.pem)
+2021-07-25 20:50:51,377 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubernetes/front-proxy-client.pem)
+2021-07-25 20:50:51,435 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubernetes/front-proxy-client.pem)
+2021-07-25 20:50:51,472 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubernetes/front-proxy-client.pem)
+2021-07-25 20:50:52,424 p=14524 u=student n=ansible | TASK [node_install : Copy certs/keys/kubeconfigs to Nodes] **************************************************************************
+2021-07-25 20:50:52,425 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubelet/node-2.pem)
+2021-07-25 20:50:52,456 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubelet/node-1.pem)
+2021-07-25 20:50:52,557 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubelet/node-3.pem)
+2021-07-25 20:50:53,218 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubelet/node-2-key.pem)
+2021-07-25 20:50:53,245 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubelet/node-1-key.pem)
+2021-07-25 20:50:53,346 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubelet/node-3-key.pem)
+2021-07-25 20:50:54,005 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kube-proxy/kubeconfig)
+2021-07-25 20:50:54,012 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kube-proxy/kubeconfig)
+2021-07-25 20:50:54,143 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kube-proxy/kubeconfig)
+2021-07-25 20:50:54,759 p=14524 u=student n=ansible | changed: [node-1] => (item=File = /var/lib/kubelet/kubeconfig)
+2021-07-25 20:50:54,775 p=14524 u=student n=ansible | changed: [node-2] => (item=File = /var/lib/kubelet/kubeconfig)
+2021-07-25 20:50:54,892 p=14524 u=student n=ansible | changed: [node-3] => (item=File = /var/lib/kubelet/kubeconfig)
+2021-07-25 20:51:00,531 p=14524 u=student n=ansible | TASK [node_install : Install kubernetes apt dependencies on nodes] ******************************************************************
+2021-07-25 20:51:00,532 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:51:00,600 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:51:00,646 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:51:02,857 p=14524 u=student n=ansible | TASK [node_install : Download Kubernetes kubectl] ***********************************************************************************
+2021-07-25 20:51:02,858 p=14524 u=student n=ansible | changed: [node-1] => (item={'url': 'https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl', 'dest': '/usr/local/bin/kubectl', 'mode': '0755'})
+2021-07-25 20:51:02,862 p=14524 u=student n=ansible | changed: [node-3] => (item={'url': 'https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl', 'dest': '/usr/local/bin/kubectl', 'mode': '0755'})
+2021-07-25 20:51:03,039 p=14524 u=student n=ansible | changed: [node-2] => (item={'url': 'https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl', 'dest': '/usr/local/bin/kubectl', 'mode': '0755'})
+2021-07-25 20:51:05,027 p=14524 u=student n=ansible | TASK [node_install : Download the Node binaries] ************************************************************************************
+2021-07-25 20:51:05,028 p=14524 u=student n=ansible | changed: [node-2] => (item=k8s v1.18.0 - /usr/local/bin/kube-proxy)
+2021-07-25 20:51:05,066 p=14524 u=student n=ansible | changed: [node-3] => (item=k8s v1.18.0 - /usr/local/bin/kube-proxy)
+2021-07-25 20:51:05,376 p=14524 u=student n=ansible | changed: [node-1] => (item=k8s v1.18.0 - /usr/local/bin/kube-proxy)
+2021-07-25 20:51:09,145 p=14524 u=student n=ansible | changed: [node-2] => (item=k8s v1.18.0 - /usr/local/bin/kubelet)
+2021-07-25 20:51:09,171 p=14524 u=student n=ansible | changed: [node-3] => (item=k8s v1.18.0 - /usr/local/bin/kubelet)
+2021-07-25 20:51:09,580 p=14524 u=student n=ansible | changed: [node-1] => (item=k8s v1.18.0 - /usr/local/bin/kubelet)
+2021-07-25 20:51:10,422 p=14524 u=student n=ansible | changed: [node-2] => (item=k8s v1.18.0 - /usr/local/bin/runsc)
+2021-07-25 20:51:10,432 p=14524 u=student n=ansible | changed: [node-3] => (item=k8s v1.18.0 - /usr/local/bin/runsc)
+2021-07-25 20:51:10,618 p=14524 u=student n=ansible | changed: [node-1] => (item=k8s v1.18.0 - /usr/local/bin/runsc)
+2021-07-25 20:51:11,520 p=14524 u=student n=ansible | changed: [node-1] => (item=k8s v1.18.0 - /usr/local/bin/runc)
+2021-07-25 20:51:11,715 p=14524 u=student n=ansible | changed: [node-2] => (item=k8s v1.18.0 - /usr/local/bin/runc)
+2021-07-25 20:51:12,121 p=14524 u=student n=ansible | changed: [node-3] => (item=k8s v1.18.0 - /usr/local/bin/runc)
+2021-07-25 20:51:12,231 p=14524 u=student n=ansible | ok: [node-1] => (item=k8s v1.18.0 - /usr/local/bin/kubectl)
+2021-07-25 20:51:12,399 p=14524 u=student n=ansible | ok: [node-2] => (item=k8s v1.18.0 - /usr/local/bin/kubectl)
+2021-07-25 20:51:12,817 p=14524 u=student n=ansible | ok: [node-3] => (item=k8s v1.18.0 - /usr/local/bin/kubectl)
+2021-07-25 20:51:15,176 p=14524 u=student n=ansible | TASK [node_install : Download and unarchive Node dependencies] **********************************************************************
+2021-07-25 20:51:15,178 p=14524 u=student n=ansible | changed: [node-3] => (item=crictl)
+2021-07-25 20:51:15,869 p=14524 u=student n=ansible | changed: [node-1] => (item=crictl)
+2021-07-25 20:51:15,948 p=14524 u=student n=ansible | changed: [node-2] => (item=crictl)
+2021-07-25 20:51:19,379 p=14524 u=student n=ansible | changed: [node-3] => (item=cni-plugins)
+2021-07-25 20:51:20,129 p=14524 u=student n=ansible | changed: [node-2] => (item=cni-plugins)
+2021-07-25 20:51:22,019 p=14524 u=student n=ansible | changed: [node-1] => (item=cni-plugins)
+2021-07-25 20:51:25,903 p=14524 u=student n=ansible | changed: [node-3] => (item=containerd)
+2021-07-25 20:51:26,283 p=14524 u=student n=ansible | changed: [node-2] => (item=containerd)
+2021-07-25 20:51:28,638 p=14524 u=student n=ansible | changed: [node-1] => (item=containerd)
+2021-07-25 20:51:29,774 p=14524 u=student n=ansible | TASK [node_install : Create the 99-loopback.conf file for each node.] ***************************************************************
+2021-07-25 20:51:29,775 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:51:29,809 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:51:29,812 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:51:30,504 p=14524 u=student n=ansible | TASK [node_install : Enable br_netfilter kernel module] *****************************************************************************
+2021-07-25 20:51:30,505 p=14524 u=student n=ansible | changed: [node-1] => (item=br_netfilter)
+2021-07-25 20:51:30,533 p=14524 u=student n=ansible | changed: [node-2] => (item=br_netfilter)
+2021-07-25 20:51:30,544 p=14524 u=student n=ansible | changed: [node-3] => (item=br_netfilter)
+2021-07-25 20:51:30,932 p=14524 u=student n=ansible | changed: [node-1] => (item=overlay)
+2021-07-25 20:51:30,974 p=14524 u=student n=ansible | changed: [node-2] => (item=overlay)
+2021-07-25 20:51:30,997 p=14524 u=student n=ansible | changed: [node-3] => (item=overlay)
+2021-07-25 20:51:31,666 p=14524 u=student n=ansible | TASK [node_install : Enable packet forwarding on the node] **************************************************************************
+2021-07-25 20:51:31,667 p=14524 u=student n=ansible | changed: [node-1] => (item=net.ipv4.ip_forward)
+2021-07-25 20:51:31,670 p=14524 u=student n=ansible | changed: [node-3] => (item=net.ipv4.ip_forward)
+2021-07-25 20:51:31,674 p=14524 u=student n=ansible | changed: [node-2] => (item=net.ipv4.ip_forward)
+2021-07-25 20:51:32,085 p=14524 u=student n=ansible | changed: [node-3] => (item=net.bridge.bridge-nf-call-iptables)
+2021-07-25 20:51:32,089 p=14524 u=student n=ansible | changed: [node-1] => (item=net.bridge.bridge-nf-call-iptables)
+2021-07-25 20:51:32,100 p=14524 u=student n=ansible | changed: [node-2] => (item=net.bridge.bridge-nf-call-iptables)
+2021-07-25 20:51:32,503 p=14524 u=student n=ansible | changed: [node-1] => (item=net.bridge.bridge-nf-call-ip6tables)
+2021-07-25 20:51:32,509 p=14524 u=student n=ansible | changed: [node-3] => (item=net.bridge.bridge-nf-call-ip6tables)
+2021-07-25 20:51:32,514 p=14524 u=student n=ansible | changed: [node-2] => (item=net.bridge.bridge-nf-call-ip6tables)
+2021-07-25 20:51:33,324 p=14524 u=student n=ansible | TASK [node_install : Persist br_netfilter kernell module loading (on reboot)] *******************************************************
+2021-07-25 20:51:33,325 p=14524 u=student n=ansible | changed: [node-1] => (item=br_netfilter)
+2021-07-25 20:51:33,415 p=14524 u=student n=ansible | changed: [node-2] => (item=br_netfilter)
+2021-07-25 20:51:33,421 p=14524 u=student n=ansible | changed: [node-3] => (item=br_netfilter)
+2021-07-25 20:51:34,095 p=14524 u=student n=ansible | changed: [node-1] => (item=overlay)
+2021-07-25 20:51:34,178 p=14524 u=student n=ansible | changed: [node-2] => (item=overlay)
+2021-07-25 20:51:34,188 p=14524 u=student n=ansible | changed: [node-3] => (item=overlay)
+2021-07-25 20:51:35,058 p=14524 u=student n=ansible | TASK [node_install : Create node configuration files] *******************************************************************************
+2021-07-25 20:51:35,059 p=14524 u=student n=ansible | changed: [node-1] => (item=containerd)
+2021-07-25 20:51:35,080 p=14524 u=student n=ansible | changed: [node-2] => (item=containerd)
+2021-07-25 20:51:35,128 p=14524 u=student n=ansible | changed: [node-3] => (item=containerd)
+2021-07-25 20:51:35,885 p=14524 u=student n=ansible | changed: [node-1] => (item=kubelet-config)
+2021-07-25 20:51:35,913 p=14524 u=student n=ansible | changed: [node-2] => (item=kubelet-config)
+2021-07-25 20:51:35,976 p=14524 u=student n=ansible | changed: [node-3] => (item=kubelet-config)
+2021-07-25 20:51:36,746 p=14524 u=student n=ansible | changed: [node-1] => (item=kube-proxy)
+2021-07-25 20:51:36,755 p=14524 u=student n=ansible | changed: [node-3] => (item=kube-proxy)
+2021-07-25 20:51:36,758 p=14524 u=student n=ansible | changed: [node-2] => (item=kube-proxy)
+2021-07-25 20:51:37,591 p=14524 u=student n=ansible | TASK [node_install : Create the containerd service (systemd) file] ******************************************************************
+2021-07-25 20:51:37,592 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:51:37,596 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:51:37,628 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:51:38,477 p=14524 u=student n=ansible | TASK [node_install : Update the containerd config file] *****************************************************************************
+2021-07-25 20:51:38,478 p=14524 u=student n=ansible | changed: [node-1]
+2021-07-25 20:51:38,538 p=14524 u=student n=ansible | changed: [node-2]
+2021-07-25 20:51:38,545 p=14524 u=student n=ansible | changed: [node-3]
+2021-07-25 20:51:39,409 p=14524 u=student n=ansible | TASK [node_install : Create the node services config files for each node] ***********************************************************
+2021-07-25 20:51:39,410 p=14524 u=student n=ansible | changed: [node-1] => (item=/etc/systemd/system/kube-proxy.service)
+2021-07-25 20:51:39,420 p=14524 u=student n=ansible | changed: [node-2] => (item=/etc/systemd/system/kube-proxy.service)
+2021-07-25 20:51:39,490 p=14524 u=student n=ansible | changed: [node-3] => (item=/etc/systemd/system/kube-proxy.service)
+2021-07-25 20:51:40,201 p=14524 u=student n=ansible | changed: [node-2] => (item=/etc/systemd/system/kubelet.service)
+2021-07-25 20:51:40,234 p=14524 u=student n=ansible | changed: [node-1] => (item=/etc/systemd/system/kubelet.service)
+2021-07-25 20:51:40,282 p=14524 u=student n=ansible | changed: [node-3] => (item=/etc/systemd/system/kubelet.service)
+2021-07-25 20:51:41,153 p=14524 u=student n=ansible | ok: [node-3] => (item=/etc/systemd/system/containerd.service)
+2021-07-25 20:51:41,170 p=14524 u=student n=ansible | ok: [node-2] => (item=/etc/systemd/system/containerd.service)
+2021-07-25 20:51:41,174 p=14524 u=student n=ansible | ok: [node-1] => (item=/etc/systemd/system/containerd.service)
+2021-07-25 20:51:42,080 p=14524 u=student n=ansible | TASK [node_install : Reload systemctl daemons] **************************************************************************************
+2021-07-25 20:51:42,080 p=14524 u=student n=ansible | ok: [node-1]
+2021-07-25 20:51:42,103 p=14524 u=student n=ansible | ok: [node-2]
+2021-07-25 20:51:42,119 p=14524 u=student n=ansible | ok: [node-3]
+2021-07-25 20:51:43,104 p=14524 u=student n=ansible | TASK [node_install : Enable k8s services] *******************************************************************************************
+2021-07-25 20:51:43,105 p=14524 u=student n=ansible | changed: [node-1] => (item={'name': 'kube-proxy', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kube-proxy.service.j2', 'service_path': '/etc/systemd/system/kube-proxy.service'})
+2021-07-25 20:51:43,135 p=14524 u=student n=ansible | changed: [node-2] => (item={'name': 'kube-proxy', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kube-proxy.service.j2', 'service_path': '/etc/systemd/system/kube-proxy.service'})
+2021-07-25 20:51:43,142 p=14524 u=student n=ansible | changed: [node-3] => (item={'name': 'kube-proxy', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kube-proxy.service.j2', 'service_path': '/etc/systemd/system/kube-proxy.service'})
+2021-07-25 20:51:43,948 p=14524 u=student n=ansible | changed: [node-3] => (item={'name': 'kubelet', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kubelet.service.j2', 'service_path': '/etc/systemd/system/kubelet.service'})
+2021-07-25 20:51:43,952 p=14524 u=student n=ansible | changed: [node-1] => (item={'name': 'kubelet', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kubelet.service.j2', 'service_path': '/etc/systemd/system/kubelet.service'})
+2021-07-25 20:51:44,007 p=14524 u=student n=ansible | changed: [node-2] => (item={'name': 'kubelet', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kubelet.service.j2', 'service_path': '/etc/systemd/system/kubelet.service'})
+2021-07-25 20:51:44,770 p=14524 u=student n=ansible | changed: [node-3] => (item={'name': 'containerd', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/containerd.service.j2', 'service_path': '/etc/systemd/system/containerd.service'})
+2021-07-25 20:51:44,838 p=14524 u=student n=ansible | changed: [node-1] => (item={'name': 'containerd', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/containerd.service.j2', 'service_path': '/etc/systemd/system/containerd.service'})
+2021-07-25 20:51:44,873 p=14524 u=student n=ansible | changed: [node-2] => (item={'name': 'containerd', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/containerd.service.j2', 'service_path': '/etc/systemd/system/containerd.service'})
+2021-07-25 20:51:45,624 p=14524 u=student n=ansible | TASK [node_install : Restart the k8s services] **************************************************************************************
+2021-07-25 20:51:45,629 p=14524 u=student n=ansible | changed: [node-1] => (item={'name': 'kube-proxy', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kube-proxy.service.j2', 'service_path': '/etc/systemd/system/kube-proxy.service'})
+2021-07-25 20:51:45,675 p=14524 u=student n=ansible | changed: [node-2] => (item={'name': 'kube-proxy', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kube-proxy.service.j2', 'service_path': '/etc/systemd/system/kube-proxy.service'})
+2021-07-25 20:51:45,679 p=14524 u=student n=ansible | changed: [node-3] => (item={'name': 'kube-proxy', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kube-proxy.service.j2', 'service_path': '/etc/systemd/system/kube-proxy.service'})
+2021-07-25 20:51:46,333 p=14524 u=student n=ansible | changed: [node-3] => (item={'name': 'kubelet', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kubelet.service.j2', 'service_path': '/etc/systemd/system/kubelet.service'})
+2021-07-25 20:51:46,338 p=14524 u=student n=ansible | changed: [node-1] => (item={'name': 'kubelet', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kubelet.service.j2', 'service_path': '/etc/systemd/system/kubelet.service'})
+2021-07-25 20:51:46,365 p=14524 u=student n=ansible | changed: [node-2] => (item={'name': 'kubelet', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/kubelet.service.j2', 'service_path': '/etc/systemd/system/kubelet.service'})
+2021-07-25 20:51:53,310 p=14524 u=student n=ansible | changed: [node-3] => (item={'name': 'containerd', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/containerd.service.j2', 'service_path': '/etc/systemd/system/containerd.service'})
+2021-07-25 20:51:53,391 p=14524 u=student n=ansible | changed: [node-1] => (item={'name': 'containerd', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/containerd.service.j2', 'service_path': '/etc/systemd/system/containerd.service'})
+2021-07-25 20:51:53,394 p=14524 u=student n=ansible | changed: [node-2] => (item={'name': 'containerd', 'service_j2': '/home/student/git/kubernetes-the-alta3-way/roles/node_install/templates/containerd.service.j2', 'service_path': '/etc/systemd/system/containerd.service'})
+2021-07-25 20:51:53,474 p=14524 u=student n=ansible | PLAY [deploy k8s services] **********************************************************************************************************
+2021-07-25 20:51:54,259 p=14524 u=student n=ansible | TASK [calico : Generate a calico installation yaml files] ***************************************************************************
+2021-07-25 20:51:54,260 p=14524 u=student n=ansible | changed: [localhost] => (item={'src': '/home/student/git/kubernetes-the-alta3-way/roles/calico/templates/calico-etcd.yaml.j2', 'dest': '/home/student/k8s-config/calico-etcd.yaml'})
+2021-07-25 20:51:55,225 p=14524 u=student n=ansible | TASK [calico : Apply calico service] ************************************************************************************************
+2021-07-25 20:51:55,225 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:51:55,795 p=14524 u=student n=ansible | TASK [kube-dns : Generate a kube-dns installation yaml file] ************************************************************************
+2021-07-25 20:51:55,795 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:51:56,687 p=14524 u=student n=ansible | TASK [kube-dns : Apply kube-dns service] ********************************************************************************************
+2021-07-25 20:51:56,688 p=14524 u=student n=ansible | changed: [localhost]
+2021-07-25 20:51:56,739 p=14524 u=student n=ansible | PLAY RECAP **************************************************************************************************************************
+2021-07-25 20:51:56,740 p=14524 u=student n=ansible | localhost                  : ok=47   changed=43   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-07-25 20:51:56,741 p=14524 u=student n=ansible | master-1                   : ok=26   changed=21   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-07-25 20:51:56,741 p=14524 u=student n=ansible | master-2                   : ok=25   changed=21   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-07-25 20:51:56,742 p=14524 u=student n=ansible | master-3                   : ok=25   changed=21   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-07-25 20:51:56,742 p=14524 u=student n=ansible | node-1                     : ok=30   changed=28   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-07-25 20:51:56,743 p=14524 u=student n=ansible | node-2                     : ok=30   changed=28   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-07-25 20:51:56,743 p=14524 u=student n=ansible | node-3                     : ok=30   changed=28   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
