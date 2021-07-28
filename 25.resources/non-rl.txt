@@ -1,0 +1,54 @@
+Name:         linux-pod-r
+Namespace:    default
+Priority:     0
+Node:         node-3/10.0.231.179
+Start Time:   Tue, 27 Jul 2021 12:43:39 +0000
+Labels:       <none>
+Annotations:  Status:  Running
+IP:           192.168.139.70
+IPs:
+  IP:  192.168.139.70
+Containers:
+  ubuntu-r:
+    Container ID:  containerd://597f039ea412ecb457be0f4a52fee0b1f6ed51a8052ec47cf41abf71dbd9f545
+    Image:         ubuntu
+    Image ID:      docker.io/library/ubuntu@sha256:82becede498899ec668628e7cb0ad87b6e1c371cb8a1e597d83a47fac21d6af3
+    Port:          80/TCP
+    Host Port:     0/TCP
+    Command:
+      /bin/bash
+      -ec
+      while :; do echo '.'; sleep 5 ; done
+    State:          Running
+      Started:      Tue, 27 Jul 2021 12:43:47 +0000
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        300m
+      memory:     128Mi
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gk5th (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-gk5th:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-gk5th
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  21m   default-scheduler  Successfully assigned default/linux-pod-r to node-3
+  Normal  Pulling    21m   kubelet, node-3    Pulling image "ubuntu"
+  Normal  Pulled     21m   kubelet, node-3    Successfully pulled image "ubuntu"
+  Normal  Created    21m   kubelet, node-3    Created container ubuntu-r
+  Normal  Started    21m   kubelet, node-3    Started container ubuntu-r
