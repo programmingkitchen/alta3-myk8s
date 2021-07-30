@@ -1,0 +1,19 @@
+[Unit]
+Description=alta3 tmux ttyd service
+After=network.target
+
+[Service]
+User=student
+Group=student
+
+ExecStart=/opt/ttyd/ttyd \
+  --interface 0.0.0.0 \
+  --port 2222 \
+  --client-option 'disableLeaveAlert=true' \
+  --client-option 'titleFixed=bchd Alta3 Terminal' \
+  --client-option 'theme={"background":"#0f0f0f"}' \
+    /usr/bin/tmux new -A -s ttyd
+
+[Install]
+WantedBy=multi-user.target
+
