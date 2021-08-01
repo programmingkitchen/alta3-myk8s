@@ -1,7 +1,7 @@
 apiVersion: v1                 # API on kubernetes Master target
 kind: Pod                      # type of resource to create
 metadata:
-  name: nginx-locked-n-loaded  # name for Pod
+  name: nginx-locked-2  # name for Pod
   labels:
     app: nginx-configured
 spec:
