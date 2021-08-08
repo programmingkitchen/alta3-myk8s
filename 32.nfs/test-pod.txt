@@ -1,0 +1,60 @@
+Name:         test-pod
+Namespace:    default
+Priority:     0
+Node:         node-3/10.0.231.179
+Start Time:   Sun, 08 Aug 2021 20:27:50 +0000
+Labels:       <none>
+Annotations:  Status:  Succeeded
+IP:           192.168.139.81
+IPs:
+  IP:  192.168.139.81
+Containers:
+  test-pod:
+    Container ID:  containerd://a6af9d2238405643972665fe385be49745ffd406802779040d0810ae162d0dfd
+    Image:         gcr.io/google_containers/busybox:1.24
+    Image ID:      sha256:ddabeeccc3fa881b831a6dc22831db07d56876dc6f660fd017030bcef0f7de5c
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /bin/sh
+    Args:
+      -c
+      touch /mnt/SUCCESS && exit 0 || exit 1
+    State:          Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Sun, 08 Aug 2021 20:27:53 +0000
+      Finished:     Sun, 08 Aug 2021 20:27:53 +0000
+    Ready:          False
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /mnt from nfs-pvc (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gk5th (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  nfs-pvc:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  test-claim
+    ReadOnly:   false
+  default-token-gk5th:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-gk5th
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  107s  default-scheduler  Successfully assigned default/test-pod to node-3
+  Normal  Pulling    105s  kubelet, node-3    Pulling image "gcr.io/google_containers/busybox:1.24"
+  Normal  Pulled     104s  kubelet, node-3    Successfully pulled image "gcr.io/google_containers/busybox:1.24"
+  Normal  Created    104s  kubelet, node-3    Created container test-pod
+  Normal  Started    104s  kubelet, node-3    Started container test-pod
