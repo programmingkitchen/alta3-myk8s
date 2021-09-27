@@ -2,6 +2,7 @@ alias g='cd ~/myk8s'
 
 # K8s commands
 alias k='kubectl '
+alias kns='kubectl get namespaces'
 alias kw="watch -n 2 'kubectl get pods'"
 alias kp='kubectl get pods'
 alias kpa='kubectl get pods --all-namespaces'
@@ -10,6 +11,7 @@ alias kpl='kubectl get pods --show-labels'
 alias kd='kubectl get deployments'
 alias ks='kubectl get services --all-namespaces'
 alias kj='kubectl get jobs'
+alias kcm='kubectl get cm'
 
 # Git commands
 alias perm='chmod u+x *'
